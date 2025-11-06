@@ -163,6 +163,11 @@ protected:
     bool m_print_unconverged_particle_details = false;
 
     /**
+     * \brief whether to skip the full Picard update of particls on the initial newton step
+     */
+    bool m_skip_particle_picard_init = false;
+
+    /**
      * \brief Whether to use mass matrices for the implicit solver
      */
     bool m_use_mass_matrices = false;
@@ -205,7 +210,7 @@ protected:
      */
     void InitializeMassMatrices ();
 
-    void PrintMassMatricesParameters () const;
+    void PrintBaseImplicitSolverParameters () const;
 
     /**
      * \brief Perform operations needed before computing the Right Hand Side
